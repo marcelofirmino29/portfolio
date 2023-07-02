@@ -160,7 +160,7 @@
         </section>
         <!-- Contact Section-->
       
-<!-- Portfolio Section Final-->
+        <!-- Portfolio Section Final-->
 <section class="page-section portfolio" id="contact">
     <div class="container">
         <!-- Portfolio Section Heading-->
@@ -179,12 +179,41 @@
                         <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                     </div>
                     <img class="img-fluid" src="assets/img/portfolio/contato.png" alt="..." />
-                    <a href="https://api.whatsapp.com/send?phone=5595991758302" class="btn btn-primary btn-whatsapp" target="_blank">Entre em contato</a>
+                    <button class="btn btn-primary btn-whatsapp" data-phone="5595991758302" data-toggle="modal" data-target="#modalContato">Entre em contato</button>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Modal de Contato -->
+<div class="modal fade" id="modalContato" tabindex="-1" role="dialog" aria-labelledby="modalContatoLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalContatoLabel">Entre em contato</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Para entrar em contato pelo WhatsApp, clique no botão abaixo:</p>
+                <a class="btn btn-primary btn-whatsapp-modal" target="_blank">Abrir WhatsApp</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#modalContato').on('shown.bs.modal', function () {
+            var phoneNumber = $(event.relatedTarget).data('phone');
+            var whatsappLink = 'https://api.whatsapp.com/send?phone=' + phoneNumber;
+            $('.btn-whatsapp-modal').attr('href', whatsappLink);
+        });
+    });
+</script>
+
 
         <!-- Footer-->
         <footer class="footer text-center">
