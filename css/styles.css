@@ -11035,6 +11035,8 @@ html {
   .portfolio-modal .portfolio-modal-title {
     font-size: 3rem;
     line-height: 2.5rem;
+    .row {
+      align-items: flex-start;
   }
 }
 
@@ -11054,4 +11056,16 @@ html {
   margin: 0 auto;
   max-width: 100%;
   width: 100%;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.col-lg-8 {
+  width: 100%;
+}
+
 }
