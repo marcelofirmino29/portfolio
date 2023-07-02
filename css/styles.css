@@ -11048,3 +11048,10 @@ html {
 .copyright {
   background-color: #1a252f;
 }
+
+.responsive-iframe {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+}
