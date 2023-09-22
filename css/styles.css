@@ -11048,3 +11048,8 @@ html {
 .copyright {
   background-color: #1a252f;
 }
+
+.img-small {
+  max-width: 175px; /* Ajuste o tamanho desejado aqui */
+  height: auto;
+}
