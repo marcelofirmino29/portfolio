@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Portfolio Profissional - Marcelo Firmino - Segurança da Informação" />
+        <meta name="description" content="Portfolio Profissional - Marcelo Firmino da Silva" />
         <meta name="author" content="Marcelo Firmino" />
         <title>Portfolio - Marcelo Firmino</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -12,25 +12,34 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="css/styles.css" rel="stylesheet" />
         <style>
-            /* Uniformização de cores e imagens */
-            .bg-primary { background-color: #2c3e50 !important; } /* Azul escuro profissional */
-            .bg-secondary { background-color: #1a252f !important; }
-            .text-primary { color: #2c3e50 !important; }
-            .img-small { height: 200px; object-fit: cover; width: 100%; border-radius: 0.5rem; }
-            .divider-custom .divider-custom-line { background-color: #2c3e50; }
-            .divider-custom.divider-light .divider-custom-line { background-color: #fff; }
+            .icon-box {
+                background: #f8f9fa;
+                padding: 3rem 1rem;
+                border-radius: 0.75rem;
+                min-height: 280px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+                border: 1px solid #dee2e6;
+            }
+            .portfolio-item:hover .icon-box {
+                background: #2c3e50;
+                color: white !important;
+                transform: translateY(-5px);
+            }
+            .portfolio-item:hover .icon-box i { color: white !important; }
+            .icon-box i { color: #2c3e50; transition: all 0.3s ease; }
         </style>
     </head>
     <body id="page-top">
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="#page-top">Marcelo Firmino</a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu <i class="fas fa-bars"></i>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Projetos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Especialidades</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Sobre</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contato</a></li>
                     </ul>
@@ -40,11 +49,11 @@
 
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
-                <img class="masthead-avatar mb-5 rounded-circle" src="assets/img/portfolio/eu.jpg" alt="Marcelo Firmino" />
+                <img class="masthead-avatar mb-5 rounded-circle shadow" src="assets/img/portfolio/eu.jpg" alt="Marcelo Firmino" />
                 <h1 class="masthead-heading text-uppercase mb-0">Marcelo Firmino</h1>
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-shield-halved"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-user-shield"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <p class="masthead-subheading font-weight-light mb-0">Segurança da Informação | Gestão de Riscos | Brasília - DF</p>
@@ -61,21 +70,25 @@
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#modalWazuh">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#modalSeg">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid img-small" src="assets/img/portfolio/safe.png" alt="Wazuh" />
-                            <h5 class="text-center mt-3 text-secondary">WAZUH (SIEM/XDR)</h5>
+                            <div class="icon-box shadow-sm">
+                                <i class="fas fa-user-secret fa-5x mb-3"></i>
+                                <h5 class="text-uppercase text-center">Cibersegurança & Forense</h5>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#modalRiscos">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#modalNet">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid img-small" src="assets/img/portfolio/contratos.png" alt="Gestão de Riscos" />
-                            <h5 class="text-center mt-3 text-secondary">GESTÃO DE RISCOS</h5>
+                            <div class="icon-box shadow-sm">
+                                <i class="fas fa-network-wired fa-5x mb-3"></i>
+                                <h5 class="text-uppercase text-center">Infraestrutura de Redes</h5>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 mb-5">
@@ -83,8 +96,10 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid img-small" src="assets/img/portfolio/desenvolvimento.png" alt="Desenvolvimento" />
-                            <h5 class="text-center mt-3 text-secondary">PYTHON & DJANGO</h5>
+                            <div class="icon-box shadow-sm">
+                                <i class="fab fa-python fa-5x mb-3"></i>
+                                <h5 class="text-uppercase text-center">Python & Agile</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -96,12 +111,12 @@
                 <h2 class="page-section-heading text-center text-uppercase text-white">Sobre</h2>
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-user-check"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-award"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Especialista em Gestão de Riscos de Segurança da Informação e Privacidade, com foco em conformidade e proteção de ativos. Mestrando pelo PROFNIT com ênfase em inovação tecnológica.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">Atuação estratégica em Brasília/DF, unindo expertise técnica em plataformas como Wazuh com governança de TI e desenvolvimento robusto em Python.</p></div>
+                    <div class="col-lg-4 ms-auto"><p class="lead" style="text-align: justify;">Servidor Público Federal estável (Tecnólogo) com trajetória sólida iniciada em 2007. Especialista em Gestão da Segurança da Informação e Privacidade pela Escola Superior de Redes (ESR).</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead" style="text-align: justify;">Certificado em Python para Cibersegurança pela IBSEC e Scrum Fundamentals Certified. Atualmente focado em gestão de riscos, governança de TI e resposta a incidentes em Brasília - DF.</p></div>
                 </div>
             </div>
         </section>
@@ -110,33 +125,33 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Localização</h4>
-                        <p class="lead mb-0">Brasília - DF</p>
+                        <h4 class="text-uppercase mb-4">Contato Oficial</h4>
+                        <p class="lead mb-0">marcelo.firmino@ifrr.edu.br</p>
                     </div>
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Redes</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-github"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/marcelofirmino"><i class="fab fa-fw fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">Foco</h4>
-                        <p class="lead mb-0">Segurança Cibernética e Governança.</p>
+                        <h4 class="text-uppercase mb-4">Localização</h4>
+                        <p class="lead mb-0">Brasília - DF</p>
                     </div>
                 </div>
             </div>
         </footer>
 
-        <div class="portfolio-modal modal fade" id="modalWazuh" tabindex="-1" aria-hidden="true">
+        <div class="portfolio-modal modal fade" id="modalSeg" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-xl">
-                <div class="modal-content text-center">
-                    <div class="container py-5">
-                        <h2 class="text-secondary text-uppercase mb-0">Wazuh (SIEM/XDR)</h2>
-                        <p class="mb-4 mt-4">Implementação de monitoramento ativo, detecção de intrusão e conformidade regulatória através de agentes e regras customizadas.</p>
+                <div class="modal-content py-5">
+                    <div class="container text-center">
+                        <h2 class="text-secondary text-uppercase mb-0">Cibersegurança</h2>
+                        <p class="mb-4 mt-4" style="text-align: justify;">Especialização em Gestão da Segurança da Informação e Privacidade (ESR) e certificação IBSEC em Python para Cibersegurança. Experiência em análise forense e proteção de infraestruturas críticas.</p>
                         <button class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
         </div>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
     </body>
