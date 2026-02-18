@@ -11,26 +11,73 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <link href="css/styles.css" rel="stylesheet" />
+        
         <style>
+            :root {
+                --primary-dark: #1a252f; /* Azul noturno mais sofisticado */
+                --secondary-dark: #2c3e50;
+            }
+
+            /* Redesign do Cabeçalho */
+            .masthead {
+                background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+                padding-top: calc(8rem + 74px); /* Mais espaço superior */
+                padding-bottom: 8rem;
+            }
+            .masthead-heading {
+                font-weight: 700 !important;
+                letter-spacing: 1px;
+            }
+            .masthead-main-icon {
+                font-size: 7rem; /* Ícone central maior */
+                margin-bottom: 2rem;
+                color: rgba(255,255,255,0.9);
+            }
+
+            /* Redesign dos Cards (Icon Boxes) */
             .icon-box {
-                background: #f8f9fa;
-                padding: 3rem 1rem;
-                border-radius: 0.75rem;
+                background: #ffffff;
+                padding: 3rem 2rem;
+                border-radius: 1rem; /* Bordas mais arredondadas */
                 min-height: 280px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-                transition: all 0.3s ease;
-                border: 1px solid #dee2e6;
+                transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Transição mais suave */
+                border: none;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave e moderna */
             }
             .portfolio-item:hover .icon-box {
-                background: #2c3e50;
-                color: white !important;
-                transform: translateY(-5px);
+                background: var(--primary-dark);
+                transform: translateY(-10px); /* Elevação maior */
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             }
-            .portfolio-item:hover .icon-box i { color: white !important; }
-            .icon-box i { color: #2c3e50; transition: all 0.3s ease; }
+            /* Muda a cor do texto e ícone para branco ao passar o mouse */
+            .portfolio-item:hover .icon-box i,
+            .portfolio-item:hover .icon-box h5 {
+                color: #fff !important;
+            }
+            .icon-box i {
+                color: var(--primary-dark);
+                transition: all 0.3s ease;
+            }
+            .icon-box h5 {
+                color: var(--secondary-dark);
+                font-weight: 700;
+                margin-top: 1.5rem;
+                letter-spacing: 0.5px;
+            }
+
+            /* Ajustes Gerais */
+            .page-section-heading { font-weight: 700; color: var(--primary-dark) !important; }
+            .bg-primary { background-color: var(--primary-dark) !important; }
+            .text-white { color: #fff !important; }
+            .footer { background-color: var(--secondary-dark); }
+            .divider-custom-line { background-color: var(--primary-dark); }
+            .divider-custom.divider-light .divider-custom-line { background-color: #fff; }
+            .divider-custom-icon { color: var(--primary-dark); }
+            .divider-custom.divider-light .divider-custom-icon { color: #fff; }
         </style>
     </head>
     <body id="page-top">
@@ -47,22 +94,23 @@
             </div>
         </nav>
 
-        <header class="masthead bg-primary text-white text-center">
+        <header class="masthead text-white text-center">
             <div class="container d-flex align-items-center flex-column">
-                <img class="masthead-avatar mb-5 rounded-circle shadow" src="assets/img/portfolio/eu.jpg" alt="Marcelo Firmino" />
+                <i class="fas fa-shield-halved masthead-main-icon"></i>
+                
                 <h1 class="masthead-heading text-uppercase mb-0">Marcelo Firmino</h1>
                 <div class="divider-custom divider-light">
                     <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-user-shield"></i></div>
+                    <div class="divider-custom-icon"><i class="fas fa-fingerprint"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <p class="masthead-subheading font-weight-light mb-0">Segurança da Informação | Gestão de Riscos | Brasília - DF</p>
+                <p class="masthead-subheading font-weight-light mb-0">Segurança da Informação | Gestão de Riscos | Inovação</p>
             </div>
         </header>
 
         <section class="page-section portfolio" id="portfolio">
             <div class="container">
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Especialidades</h2>
+                <h2 class="page-section-heading text-center text-uppercase mb-0">Especialidades</h2>
                 <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
@@ -74,8 +122,8 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class="icon-box shadow-sm">
-                                <i class="fas fa-user-secret fa-5x mb-3"></i>
+                            <div class="icon-box">
+                                <i class="fas fa-user-secret fa-5x"></i>
                                 <h5 class="text-uppercase text-center">Cibersegurança & Forense</h5>
                             </div>
                         </div>
@@ -85,9 +133,9 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class="icon-box shadow-sm">
-                                <i class="fas fa-network-wired fa-5x mb-3"></i>
-                                <h5 class="text-uppercase text-center">Infraestrutura de Redes</h5>
+                            <div class="icon-box">
+                                <i class="fas fa-server fa-5x"></i>
+                                <h5 class="text-uppercase text-center">Infraestrutura Crítica</h5>
                             </div>
                         </div>
                     </div>
@@ -96,9 +144,9 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <div class="icon-box shadow-sm">
-                                <i class="fab fa-python fa-5x mb-3"></i>
-                                <h5 class="text-uppercase text-center">Python & Agile</h5>
+                            <div class="icon-box">
+                                <i class="fab fa-python fa-5x"></i>
+                                <h5 class="text-uppercase text-center">Python & Automação</h5>
                             </div>
                         </div>
                     </div>
@@ -116,25 +164,21 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-4 ms-auto"><p class="lead" style="text-align: justify;">Servidor Público Federal estável (Tecnólogo) com trajetória sólida iniciada em 2007. Especialista em Gestão da Segurança da Informação e Privacidade pela Escola Superior de Redes (ESR).</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead" style="text-align: justify;">Certificado em Python para Cibersegurança pela IBSEC e Scrum Fundamentals Certified. Atualmente focado em gestão de riscos, governança de TI e resposta a incidentes em Brasília - DF.</p></div>
+                    <div class="col-lg-4 me-auto"><p class="lead" style="text-align: justify;">Certificado em Python para Cibersegurança pela IBSEC e Scrum Fundamentals Certified. Atualmente focado em governança de TI, gestão de riscos e resposta a incidentes em âmbito federal.</p></div>
                 </div>
             </div>
         </section>
 
         <footer class="footer text-center">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Contato Oficial</h4>
+                        <h4 class="text-uppercase mb-4">Contato Institucional</h4>
                         <p class="lead mb-0">marcelo.firmino@ifrr.edu.br</p>
                     </div>
                     <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Redes</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/marcelofirmino"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                    </div>
-                    <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">Localização</h4>
-                        <p class="lead mb-0">Brasília - DF</p>
+                        <h4 class="text-uppercase mb-4">Redes Profissionais</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/marcelofirmino" target="_blank"><i class="fab fa-fw fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -145,13 +189,13 @@
                 <div class="modal-content py-5">
                     <div class="container text-center">
                         <h2 class="text-secondary text-uppercase mb-0">Cibersegurança</h2>
-                        <p class="mb-4 mt-4" style="text-align: justify;">Especialização em Gestão da Segurança da Informação e Privacidade (ESR) e certificação IBSEC em Python para Cibersegurança. Experiência em análise forense e proteção de infraestruturas críticas.</p>
+                        <div class="divider-custom"><div class="divider-custom-line"></div><i class="fas fa-star"></i><div class="divider-custom-line"></div></div>
+                        <p class="mb-4" style="text-align: justify;">Especialização em Gestão da Segurança da Informação e Privacidade (ESR) e certificação IBSEC em Python para Cibersegurança. Experiência em análise forense computacional e proteção de ativos de informação.</p>
                         <button class="btn btn-primary" data-bs-dismiss="modal">Fechar</button>
                     </div>
                 </div>
             </div>
         </div>
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/scripts.js"></script>
     </body>
